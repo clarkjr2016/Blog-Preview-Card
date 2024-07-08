@@ -5,7 +5,7 @@
 //base
 
 $bodyBackgroundColor: #f4d04e;
-$desktopWidth: 1440px;
+$desktopWidth: 100%;
 $mobileWidth: 375px;
 $blogBackgroundColor: white;
 $pTextColor: grey;
@@ -16,6 +16,11 @@ $font-family: "Figtree", sans-serif;
 
 //layout
 
+.flexRow {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
 body {
   height: 960px;
   width: $desktopWidth;
@@ -23,6 +28,7 @@ body {
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
+
   background: $bodyBackgroundColor;
   font-family: $font-family;
 }
@@ -30,15 +36,16 @@ body {
 .card {
   background: $blogBackgroundColor;
   padding: 24px;
-  height: 522px;
+  height: fit-content;
   width: 384px;
   border-radius: 24px;
   box-shadow: 10px 5px 5px black;
+  margin: 0 auto;
 
   .illustration {
     height: 200px;
     display: block;
-    margin: 0 auto 16px auto;
+    margin: 0 auto 24px auto;
     border-radius: 24px;
   }
 
@@ -48,5 +55,32 @@ body {
     font-weight: 800;
     width: fit-content;
     border-radius: 4px;
+    height: 29px;
+  }
+
+  h4 {
+    font-size: clamp(1.25rem, 1.25vw, 2rem);
+    margin: 16px auto;
+    font-weight: 900;
+  }
+
+  p:nth-child(4) {
+    color: grey;
+    line-height: 150%;
+    font-size: clamp(1rem, 0.75vw, 2rem);
+  }
+
+  .avatarWrapper {
+    width: 50%;
+    justify-content: space-between;
+    align-items: center;
+
+    img {
+      height: 60px;
+    }
+
+    span {
+      font-weight: bolder;
+    }
   }
 }
