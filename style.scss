@@ -64,6 +64,11 @@ body {
     font-weight: 900;
   }
 
+  h4:hover {
+    color: $bodyBackgroundColor;
+    cursor: pointer;
+  }
+
   p:nth-child(4) {
     color: grey;
     line-height: 150%;
