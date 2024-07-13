@@ -22,28 +22,28 @@ $font-family: "Figtree", sans-serif;
 }
 
 body {
-  height: 960px;
+  margin: 0;
+  height: 100dvh;
   width: $desktopWidth;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-
   background: $bodyBackgroundColor;
   font-family: $font-family;
+  padding: 30px;
 }
 
 .card {
   background: $blogBackgroundColor;
   padding: 24px;
-  height: fit-content;
-  width: 384px;
+  width: clamp(300px, 40%, 384px);
   border-radius: 24px;
   box-shadow: 10px 5px 5px black;
   margin: 0 auto;
 
   .illustration {
-    height: 200px;
+    max-width: 100%;
     display: block;
     margin: 0 auto 24px auto;
     border-radius: 24px;
@@ -53,18 +53,17 @@ body {
     padding: 4px 12px;
     background: $bodyBackgroundColor;
     font-weight: 800;
-    width: fit-content;
     border-radius: 4px;
     height: 29px;
   }
 
-  h4 {
-    font-size: clamp(1.25rem, 1.25vw, 2rem);
+  h2 {
+    font-size: clamp(1.25rem, 20%, 2rem);
     margin: 16px auto;
     font-weight: 900;
   }
 
-  h4:hover {
+  h2:hover {
     color: $bodyBackgroundColor;
     cursor: pointer;
   }
@@ -76,12 +75,14 @@ body {
   }
 
   .avatarWrapper {
-    width: 50%;
-    justify-content: space-between;
+    width: 100%;
+    justify-content: flex-start;
     align-items: center;
 
     img {
-      height: 60px;
+      height: auto;
+      width: clamp(10%, 50px, 100%);
+      padding-right: 10px;
     }
 
     span {
